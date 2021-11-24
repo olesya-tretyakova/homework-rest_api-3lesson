@@ -1,41 +1,37 @@
 package com.my_company.tests;
 
-import com.my_company.filters.CustomLogFilter;
 import io.qameta.allure.restassured.AllureRestAssured;
 import org.junit.jupiter.api.Test;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static com.my_company.filters.CustomLogFilter.customLogFilter;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.hasSize;
 
 public class BookStoreTests {
 
     @Test
-    void noLogsTest(){
+    void noLogsTest() {
         given()
                 .get("https://demoqa.com/BookStore/v1/Books")
                 .then()
-                .body("books",hasSize(greaterThan(0)));
+                .body("books", hasSize(greaterThan(0)));
     }
 
     @Test
-    void allLogsTest(){
+    void allLogsTest() {
         given()
                 .log().uri()
                 .get("https://demoqa.com/BookStore/v1/Books")
                 .then()
                 .log().body()
-                .body("books",hasSize(greaterThan(0)));
+                .body("books", hasSize(greaterThan(0)));
     }
 
     @Test
-    void authorizeTest(){
+    void authorizeTest() {
 //        Map<String,String> data = new HashMap<>();
 //        data.put("userName", "alex");
 //        data.put("password", "asdsad#frew_DFS2");
@@ -58,7 +54,7 @@ public class BookStoreTests {
     }
 
     @Test
-    void authorizeWithListenerTest(){
+    void authorizeWithListenerTest() {
         String data = "{" +
                 "  \"userName\": \"alex\"," +
                 "  \"password\": \"asdsad#frew_DFS2\"" +
@@ -79,7 +75,7 @@ public class BookStoreTests {
     }
 
     @Test
-    void authorizeWithTemplateTest(){
+    void authorizeWithTemplateTest() {
         String data = "{" +
                 "  \"userName\": \"alex\"," +
                 "  \"password\": \"asdsad#frew_DFS2\"" +
@@ -100,7 +96,7 @@ public class BookStoreTests {
     }
 
     @Test
-    void authorizeWithSchemeTest(){
+    void authorizeWithSchemeTest() {
         String data = "{" +
                 "  \"userName\": \"alex\"," +
                 "  \"password\": \"asdsad#frew_DFS2\"" +
