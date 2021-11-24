@@ -95,7 +95,6 @@ public class BookStoreTests {
     }
 
     @Test
-    @Ignore
     void authorizeWithSchemeTest() {
         String data = "{" +
                 "  \"userName\": \"alex\"," +
