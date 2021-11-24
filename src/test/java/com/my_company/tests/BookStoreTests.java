@@ -48,9 +48,7 @@ public class BookStoreTests {
                 .log().body()
                 .post("https://demoqa.com/Account/v1/GenerateToken")
                 .then()
-                .log().body()
-                .body("status", is("Success"))
-                .body("result", is("User authorized successfully."));
+                .log().body();
     }
 
     @Test
@@ -112,7 +110,7 @@ public class BookStoreTests {
                 .post("https://demoqa.com/Account/v1/GenerateToken")
                 .then()
                 .log().body()
-                .body(matchesJsonSchemaInClasspath("schemas/GenerateToketSchemas.json"))
+                .body(matchesJsonSchemaInClasspath("./schemas/GenerateTokenSchemas.json"))
                 .body("result", is("User authorized successfully."));
     }
 }
