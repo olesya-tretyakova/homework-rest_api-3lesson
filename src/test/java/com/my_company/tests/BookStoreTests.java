@@ -1,6 +1,7 @@
 package com.my_company.tests;
 
 import io.qameta.allure.restassured.AllureRestAssured;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.Test;
 
 import static com.my_company.filters.CustomLogFilter.customLogFilter;
@@ -94,6 +95,7 @@ public class BookStoreTests {
     }
 
     @Test
+    @Ignore
     void authorizeWithSchemeTest() {
         String data = "{" +
                 "  \"userName\": \"alex\"," +
