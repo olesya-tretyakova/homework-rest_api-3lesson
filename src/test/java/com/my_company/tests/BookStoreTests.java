@@ -68,7 +68,7 @@ public class BookStoreTests {
                 .log().body()
                 .post("https://demoqa.com/Account/v1/GenerateToken")
                 .then()
-                .log().body()
+                .log().body();
 //                .body("status", is("Success"))
 //                .body("result", is("User authorized successfully."));
     }
