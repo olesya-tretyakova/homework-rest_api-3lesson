@@ -94,7 +94,7 @@ public class BookStoreTests {
                 .body("result", is("User authorized successfully."));
     }
 
-    @Test
+ /*   @Test
     void authorizeWithSchemeTest() {
         String data = "{" +
                 "  \"userName\": \"alex\"," +
@@ -113,5 +113,5 @@ public class BookStoreTests {
                 .log().body()
                 .body(matchesJsonSchemaInClasspath("schemas/GenerateTokenSchemas.json"))
                 .body("result", is("User authorized successfully."));
-    }
+    }*/
 }
